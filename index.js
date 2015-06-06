@@ -33,6 +33,8 @@ app.get('/',function(req, res) {
     res.sendfile('./index.html');
 });
 
+
+//Call script.js
 app.get('/script.js',function(req, res) {
     res.sendfile('./script.js');
 });
