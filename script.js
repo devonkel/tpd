@@ -1,7 +1,7 @@
 $(function () {
-//    setInterval(function () {
-//        pollServer();
-//    }, 3000);
+    setInterval(function () {
+        pollServer();
+    }, 15000);
     pollServer();
     
     function pollServer() {
@@ -9,21 +9,27 @@ $(function () {
             url: "/data",
             context: document.body
         }).done(function (data) {
-            var j = 0;
-            $('#regiont').html ('');
-            $('#stations').html ('');
-            for (i=0; i< data.length; i++) {
-                if (data[i].region != j) {
-                    j = data[i].region;
-                    $('#regiont').append('<<tr><td><h2>Region ' + j + '</h2></td></tr>');
+            var currentRegion, html;
+//            document.getElementById("dynamic").innerHTML = '';
+            for(i=0; i<=data.length-1; i++) {
+                console.log('Region', data[i].region);
+                if(currentRegion != data[i].region) {
+                    if(i != 0) {
+                        html += "</table>";
+                    }
+                    html +="<p><h2>Region " + data[i].region+"</h2>";
+                    html+="<table class='table'>";
                 }
-//                    $('#record-count').html ('<h2>' + data[i].region + '</h2');
-//            $('#stations').html('');
-//                $('#stations').append(rows(data[k].regionData[0]));
-                               $('#regiont').append(rows(i, data[i].region, data[i].regionData[0]));
+                data[i].regionData.forEach(function(region, idx) {
+                    html+="<tr><td>Station:"+region.station+"</td><td>"+region.lastUpdDt+"</td></tr>";
+                    console.log(idx, region.station, region.lastUpdDt);
+                });
+                
+                currentRegion= data[i].region;
             }
-        }).fail(function (a, b) {
-//            alert('Error: ' + b);
+            html += "</table>";
+            document.getElementById("dynamic").innerHTML = html;
+//            $('#dynamic').append(html);
         });
     }
     

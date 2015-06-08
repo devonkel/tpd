@@ -39,13 +39,14 @@ app.get('/data', function(req, res) {
 });
 
 app.get('/add', function(err,res) {
-    var newRecord = new Region({
+    var newRecord = new dataAccess.Region({
         region: '2',
         regionData: [{
             station: 'BWI',
             lastUpdDt: '04/01/15'}]
     });
-    dataAccess.addStuff(Region, newRecord, function(err, result) {
+    dataAccess.addStuff(newRecord, function(err, result) {
+//    dataAccess.addStuff(Region, newRecord, function(err, result) {
         if(err) {
             console.log(err);
             return res.sendStatus(500);
