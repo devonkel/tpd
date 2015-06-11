@@ -18,14 +18,45 @@
   </head>
   <body>
       <ul class="nav nav-tabs">
-          <li role="presentation" class="active"><a href="/">System</a></li>
-          <li role="presentation"><a href="/">Region 1</a></li>
-          <li role="presentation"><a href="/">Region 2</a></li>
-          <li role="presentation"><a href="/">Region 3</a></li>
-          <li role="presentation"><a href="/">Region 4</a></li>                   <li role="presentation"><a href="/">Region 5</a></li>
-          <li role="presentation"><a href="/">Region 6</a></li>
+          <li><a href="#sys" role="tab" data-toggle="tab">System</a></li>
+          <li><a href="#reg1" role="tab" data-toggle="tab">Region 1</a></li>
+          <li><a href="#reg2" role="tab" data-toggle="tab">Region 2</a></li>
+          <li><a href="#reg3" role="tab" data-toggle="tab">Region 3</a></li>
+          <li><a href="#reg4" role="tab" data-toggle="tab">Region 4</a></li>
+          <li><a href="#reg5" role="tab" data-toggle="tab">Region 5</a></li>
+          <li><a href="#reg6" role="tab" data-toggle="tab">Region 6</a></li>
       </ul>
-      <div id="dynamic">Initializing...</div>
+      <div class="tab-content">
+          <div class="tab-pane active" id="sys">
+              <h1>System</h1>
+              <p>All Regions</p>
+          </div>
+          <div class="tab-pane" id="reg1">
+              <h1>Region 1</h1>
+              <p>Region...1</p>
+          </div>
+          <div class="tab-pane" id="reg2">
+              <h1>Region 2</h1>
+              <p>Region...2</p>
+          </div>
+          <div class="tab-pane" id="reg3">
+              <h1>Region 3</h1>
+              <p>Region...3</p>
+          </div>
+          <div class="tab-pane" id="reg4">
+              <h1>Region 4</h1>
+              <p>Region...4</p>
+          </div>
+          <div class="tab-pane" id="reg5">
+              <h1>Region 5</h1>
+              <p>Region...5</p>
+          </div>
+          <div class="tab-pane" id="reg6">
+              <h1>Region 6</h1>
+              <p>Region...six</p>
+          </div>          
+      </div><!-- ./tab-content -->
+<!--      <div id="dynamic">Initializing...</div>-->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
